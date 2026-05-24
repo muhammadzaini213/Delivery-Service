@@ -22,6 +22,11 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
+open_phone={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
 
 [physics]
 
@@ -30,3 +35,26 @@ interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="forward_plus"
+
+[xogot]
+
+project/editorState=[{
+"column": 0,
+"line": 0,
+"path": "res://Scripts/Characters/player.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://Scripts/Flat/flat_101.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 5,
+"path": "res://Scenes/UI/phone_ui.gd",
+"type": "file"
+}]
+project/breakpoints={}
+project/disabled_breakpoints={}
