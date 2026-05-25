@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b0va0b57v7b8u"]
+
+[ext_resource type="Script" uid="uid://c5juaivxmlq2g" path="res://Scenes/phone ui/label.gd" id="1_mj6hf"]
+[ext_resource type="Script" uid="uid://dl8m82nqs2n6x" path="res://Scenes/phone ui/phone_ui.gd" id="1_r3iy8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3iy8"]
+
+[node name="PhoneUi" type="Node2D" unique_id=303723287]
+script = ExtResource("1_r3iy8")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1650702105]
+material = SubResource("CanvasItemMaterial_r3iy8")
+position = Vector2(30, 9)
+scale = Vector2(1.1525424, 1)
+polygon = PackedVector2Array(293, -7, 706, -7, 706.0001, 318.96295, 706, 645, 297, 645)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1160649823]
+points = PackedVector2Array(798, 60, 418, 60, 418, 586, 798, 586, 798, 60)
+default_color = Color(0, 0, 0, 1)
+
+[node name="order" type="Label" parent="." unique_id=882392792]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 438.0
+offset_top = 84.0
+offset_right = 759.0
+offset_bottom = 182.0
+script = ExtResource("1_mj6hf")
