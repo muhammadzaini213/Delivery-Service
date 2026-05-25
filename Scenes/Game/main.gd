@@ -12,6 +12,9 @@ var transitioning := false
 @onready var outside = $Outside
 @onready var flats = $Apartment/Flats
 @onready var up_staircase = $Apartment/UpStaircase
+@onready var down_staircase = $Apartment/DownStaircase
+@onready var up_staircase_collision = $Apartment/UpStaircase/CollisionShape2D
+@onready var down_staircase_collision = $Apartment/DownStaircase/CollisionShape2D
 @onready var floor_text = $UI/FloorText
 @onready var pizza_text = $UI/PizzaText
 @onready var fade_rect = $UI/FadeRect
@@ -66,6 +69,9 @@ func update_floor():
 	outside.visible = is_outside
 	floor_text.text = "Outside" if is_outside else "Floor %s" % current_floor
 	up_staircase.visible = current_floor < MAX_FLOOR
+	down_staircase.visible = not is_outside
+	up_staircase_collision.disabled = is_outside or current_floor >= MAX_FLOOR
+	down_staircase_collision.disabled = is_outside
 
 	for flat in flats.get_children():
 		flat.set_floor_number(current_floor)
