@@ -1,20 +1,37 @@
 extends CharacterBody2D
 
 @export var walk_speed = 200
-@export var sprint_speed = 350
+@export var max_pizzas := 5
+@export var pizzas_held := 5
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 
-	var direction = Vector2.ZERO
+	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	if not is_on_floor():
+		velocity.y += gravity * delta
 
-	var current_speed = walk_speed
+	velocity.x = direction * walk_speed
 
-	if Input.is_key_pressed(KEY_SHIFT):
-		current_speed = sprint_speed
-
-	velocity = direction.normalized() * current_speed
+	if direction < 0:
+		$Sprite2D.flip_h = true
+	elif direction > 0:
+		$Sprite2D.flip_h = false
 
 	move_and_slide()
+
+func deliver_pizza():
+	if pizzas_held <= 0:
+		return false
+
+	pizzas_held -= 1
+	return true
+
+func collect_pizzas():
+	if pizzas_held >= max_pizzas:
+		return false
+
+	pizzas_held = max_pizzas
+	return true
