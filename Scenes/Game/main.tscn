@@ -125,6 +125,19 @@ offset_right = 450.0
 offset_bottom = 17.0
 color = Color(0.45, 0.45, 0.45, 1)
 
+[node name="Platform" type="StaticBody2D" parent="." unique_id=82488060]
+position = Vector2(560, 370)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=357494578]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect" type="ColorRect" parent="Platform" unique_id=208514821]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.05, 0.35, 1, 1)
+
 [node name="Apartment" type="Node2D" parent="." unique_id=160127076]
 
 [node name="Flats" type="Node2D" parent="Apartment" unique_id=1887532992]

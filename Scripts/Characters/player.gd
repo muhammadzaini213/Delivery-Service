@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _physics_process(delta):
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var is_sprinting = Input.is_key_pressed(KEY_SHIFT)
