@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cm77wn1hr427j"]
+
+[ext_resource type="Script" uid="uid://cbjdht6e3xvn3" path="res://Scenes/UI/phone_ui.gd" id="1_fhkju"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=413616810]
+script = ExtResource("1_fhkju")
+
+[node name="Phone_UI" type="ColorRect" parent="." unique_id=1275956767]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.38038635, 0.99606323, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Phone_UI" unique_id=1622963095]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Phone_UI/VBoxContainer" unique_id=1048303915]
+layout_mode = 2
+alignment = 1
+
+[node name="Task_One" type="Button" parent="Phone_UI/VBoxContainer/HBoxContainer" unique_id=1511101969]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Task One:"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Phone_UI/VBoxContainer" unique_id=48088884]
+layout_mode = 2
+alignment = 1
+
+[node name="Task_Two" type="Button" parent="Phone_UI/VBoxContainer/HBoxContainer2" unique_id=81980320]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Task Two:"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Phone_UI/VBoxContainer" unique_id=1828256011]
+layout_mode = 2
+alignment = 1
+
+[node name="Task_Three" type="Button" parent="Phone_UI/VBoxContainer/HBoxContainer3" unique_id=330471440]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Task Three:"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Phone_UI/VBoxContainer" unique_id=1340154892]
+layout_mode = 2
+alignment = 1
+
+[node name="Task_Four" type="Button" parent="Phone_UI/VBoxContainer/HBoxContainer4" unique_id=1408734268]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Task Four:"
+
+[connection signal="pressed" from="Phone_UI/VBoxContainer/HBoxContainer/Task_One" to="." method="_on_Order1_toggled"]
+[connection signal="minimum_size_changed" from="Phone_UI/VBoxContainer/HBoxContainer2/Task_Two" to="." method="_on_minimum_size_changed"]
+[connection signal="pressed" from="Phone_UI/VBoxContainer/HBoxContainer2/Task_Two" to="." method="_on_pressed"]
+[connection signal="toggled" from="Phone_UI/VBoxContainer/HBoxContainer2/Task_Two" to="." method="_on_toggled"]
+[connection signal="button_down" from="Phone_UI/VBoxContainer/HBoxContainer3/Task_Three" to="." method="_on_button_down"]
