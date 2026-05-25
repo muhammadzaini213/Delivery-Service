@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b0va0b57v7b8u"]
+
+[ext_resource type="Script" uid="uid://c5juaivxmlq2g" path="res://Scenes/phone ui/label.gd" id="1_mj6hf"]
+[ext_resource type="Script" uid="uid://dl8m82nqs2n6x" path="res://Scenes/phone ui/phone_ui.gd" id="1_r3iy8"]
+[ext_resource type="Script" uid="uid://c0fxw0w7ov6gh" path="res://Scenes/phone ui/DoorDashOpen.gd" id="3_kxgyb"]
+[ext_resource type="Texture2D" uid="uid://dcq8f6dv1ufag" path="res://icon.svg" id="3_tlh12"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3iy8"]
+
+[node name="PhoneUi" type="Node2D" unique_id=303723287]
+script = ExtResource("1_r3iy8")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1650702105]
+material = SubResource("CanvasItemMaterial_r3iy8")
+position = Vector2(155.12328, 68.636505)
+scale = Vector2(0.9120066, 0.8052147)
+polygon = PackedVector2Array(293, -7, 706, -7, 706.0001, 318.96295, 706, 645, 291.5294, 644)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1160649823]
+points = PackedVector2Array(798, 60, 418, 60, 418, 586, 798, 586, 798, 60)
+default_color = Color(0, 0, 0, 1)
+
+[node name="msg border" type="Line2D" parent="." unique_id=652745575]
+position = Vector2(134, 30)
+scale = Vector2(0.75749993, 0.9029304)
+points = PackedVector2Array(815.9209, 58.860046, 415.92087, 58.860046, 415.92087, 175.1481, 514.15985, 175.1481, 817.2411, 175.1481, 817.2411, 58.860046)
+default_color = Color(0, 0, 0, 1)
+
+[node name="order" type="Label" parent="." unique_id=882392792]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 458.0
+offset_top = 120.0
+offset_right = 741.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 24
+text = "order received from 101"
+script = ExtResource("1_mj6hf")
+
+[node name="doordash" type="Polygon2D" parent="." unique_id=2107737781]
+position = Vector2(2, 6)
+color = Color(0.20351279, 0.68520546, 0.11465306, 1)
+polygon = PackedVector2Array(453, 232, 541, 232, 541, 307, 453, 307)
+
+[node name="Button" type="Button" parent="doordash" unique_id=1478095044]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "doordash"
+icon = ExtResource("3_tlh12")
+script = ExtResource("3_kxgyb")
+
+[node name="upgrade shop" type="Polygon2D" parent="." unique_id=1616643268]
+position = Vector2(191, 2)
+color = Color(0.71961147, 0.4757917, 0, 1)
+polygon = PackedVector2Array(453, 232, 541, 232, 541, 307, 453, 307)
