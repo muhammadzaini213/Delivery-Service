@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgnbkjgdybbtv"]
 
 [ext_resource type="Script" uid="uid://4t257wd1jskq" path="res://Scripts/Characters/player.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://co5n4stu2812b" path="res://Scenes/Game/main.gd" id="1_ka2qr"]
 [ext_resource type="Texture2D" uid="uid://dcq8f6dv1ufag" path="res://icon.svg" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://cg67obothy0a4" path="res://Scripts/Flat/flat_101.gd" id="3_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://4u2qxdmtkf3a" path="res://Audio/SFX/freesound_community-short-success-sound-glockenspiel-treasure-video-game-6346.mp3" id="4_tefeu"]
@@ -16,6 +17,7 @@ size = Vector2(70, 40)
 size = Vector2(100, 70)
 
 [node name="Main" type="Node2D" unique_id=784944992]
+script = ExtResource("1_ka2qr")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1829272238]
 script = ExtResource("1_0wfyh")
