@@ -5,6 +5,8 @@ extends StaticBody2D
 var player_near = false
 var player = null
 
+@onready var delivery_text = $"../../../UI/DeliveryText"
+@onready var delivery_timer = $"../../../UI/DeliveryTimer"
 @onready var success_sound = $SuccessSound
 
 func _process(_delta):
@@ -16,6 +18,7 @@ func _process(_delta):
 			get_tree().current_scene.show_message("Delivered to Flat %s!" % flat_number)
 			get_tree().current_scene.update_pizza_text()
 			success_sound.play()
+			print("DELIVERED TO FLAT %s" % flat_number)
 		elif player != null:
 			get_tree().current_scene.show_message("You have no pizzas!")
 
@@ -26,8 +29,10 @@ func _on_interact_area_body_entered(body):
 	if body.name == "Player":
 		player_near = true
 		player = body
+		print("PLAYER NEAR FLAT %s" % flat_number)
 
 func _on_interact_area_body_exited(body):
 	if body.name == "Player":
 		player_near = false
 		player = null
+		print("PLAYER LEFT FLAT %s" % flat_number)
