@@ -14,9 +14,7 @@ func _process(_delta):
 func _on_interact_area_body_entered(body):
 	if body.name == "Player":
 		player_near = true
-		print("PLAYER NEAR STAIRCASE")
 
 func _on_interact_area_body_exited(body):
 	if body.name == "Player":
 		player_near = false
-		print("PLAYER LEFT STAIRCASE")
