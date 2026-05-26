@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
-@export var walk_speed = 200
-@export var sprint_speed = 350
+@export var walk_speed := 200
+@export var sprint_speed := 350
 @export var max_pizzas := 5
 @export var pizzas_held := 5
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _physics_process(delta):
 
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var is_sprinting = Input.is_key_pressed(KEY_SHIFT)
@@ -24,6 +25,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 		$AnimatedSprite2D.flip_h = false
 
 	var target_animation = "idle"
+
 	if direction != 0:
 		target_animation = "sprint" if is_sprinting else "walk"
 
@@ -32,12 +34,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	move_and_slide()
 
+
 func deliver_pizza():
 	if pizzas_held <= 0:
 		return false
 
 	pizzas_held -= 1
 	return true
+
 
 func collect_pizzas():
 	if pizzas_held >= max_pizzas:
