@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4t257wd1jskq" path="res://Scripts/Characters/player.gd" id="1_player"]
 [ext_resource type="Script" uid="uid://co5n4stu2812b" path="res://Scenes/Game/main.gd" id="2_main"]
-[ext_resource type="Texture2D" uid="uid://dcq8f6dv1ufag" path="res://icon.svg" id="3_player_texture"]
-[ext_resource type="Script" uid="uid://be2dpf4dfitwd" path="res://Scripts/Flat/flat.gd" id="4_flat"]
+[ext_resource type="Script" path="res://Scripts/Flat/flat.gd" id="4_flat"]
 [ext_resource type="AudioStream" uid="uid://4u2qxdmtkf3a" path="res://Audio/SFX/freesound_community-short-success-sound-glockenspiel-treasure-video-game-6346.mp3" id="5_success"]
 [ext_resource type="Script" uid="uid://cakpj6a5i4koc" path="res://Scripts/UI/ui.gd" id="6_ui"]
 [ext_resource type="Script" uid="uid://c6iws2sif8l30" path="res://Scripts/Objects/staircase.gd" id="7_stair"]
@@ -13,15 +12,60 @@
 [ext_resource type="Texture2D" uid="uid://y7bdj04frx8o" path="res://Sprites/staircase.png" id="11_stairs"]
 [ext_resource type="Texture2D" uid="uid://be7r5of5buv0t" path="res://Sprites/apartment.png" id="12_apartment"]
 [ext_resource type="Texture2D" uid="uid://cnge45ei1e4gl" path="res://Sprites/pizza_shop.png" id="13_shop_texture"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/player_idle.png" id="14_player_idle"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/player_walk_1.png" id="15_player_walk_1"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/player_walk_2.png" id="16_player_walk_2"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/player_walk_3.png" id="17_player_walk_3"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/player_walk_4.png" id="18_player_walk_4"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/player_walk_5.png" id="19_player_walk_5"]
+[ext_resource type="Texture2D" uid="uid://bwg1n1wgxvsk8" path="res://Sprites/Player/player_idle.png" id="14_player_idle"]
+[ext_resource type="Texture2D" uid="uid://76vu8y2yvn2t" path="res://Sprites/Player/player_walk_1.png" id="15_player_walk_1"]
+[ext_resource type="Texture2D" uid="uid://cnv4xtj6j02lj" path="res://Sprites/Player/player_walk_2.png" id="16_player_walk_2"]
+[ext_resource type="Texture2D" uid="uid://hov0l0qkbttf" path="res://Sprites/Player/player_walk_3.png" id="17_player_walk_3"]
+[ext_resource type="Texture2D" uid="uid://bmj81jngsjp0u" path="res://Sprites/Player/player_walk_4.png" id="18_player_walk_4"]
+[ext_resource type="Texture2D" uid="uid://dxudu6egun45f" path="res://Sprites/Player/player_walk_5.png" id="19_player_walk_5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_player_idle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_player_walk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_player_walk_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_player_walk_5")
+}],
+"loop": true,
+"name": &"sprint",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_player_walk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_player_walk_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_player_walk_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_player_walk_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_player_walk_5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
 size = Vector2(900, 34)
@@ -49,51 +93,6 @@ size = Vector2(90, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shop_interact"]
 size = Vector2(120, 110)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_player_idle")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_player_walk_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_player_walk_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_player_walk_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_player_walk_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_player_walk_5")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_player_walk_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_player_walk_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_player_walk_5")
-}],
-"loop": true,
-"name": &"sprint",
-"speed": 12.0
-}]
 
 [node name="Main" type="Node2D" unique_id=784944992]
 script = ExtResource("2_main")
@@ -125,18 +124,18 @@ offset_right = 450.0
 offset_bottom = 17.0
 color = Color(0.45, 0.45, 0.45, 1)
 
-[node name="Platform" type="StaticBody2D" parent="." unique_id=82488060]
-position = Vector2(560, 370)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=357494578]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform" unique_id=357494578]
 shape = SubResource("RectangleShape2D_platform")
 
-[node name="ColorRect" type="ColorRect" parent="Platform" unique_id=208514821]
+[node name="ColorRect2" type="ColorRect" parent="Platform" unique_id=208514821]
 offset_left = -450.0
 offset_top = -17.0
 offset_right = 450.0
 offset_bottom = 17.0
 color = Color(0.05, 0.35, 1, 1)
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=82488060]
+position = Vector2(560, 370)
 
 [node name="Apartment" type="Node2D" parent="." unique_id=160127076]
 
