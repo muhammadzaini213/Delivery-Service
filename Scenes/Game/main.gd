@@ -31,7 +31,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("open_phone"):
 		OrderManager.current_floor = current_floor
-		get_tree().change_scene_to_file("res://Scenes/phone ui/phone ui.tscn")
+		get_tree().change_scene_to_file("res://Scenes/phone ui/phone/phone ui.tscn")
 
 func use_staircase(direction):
 	if transitioning:

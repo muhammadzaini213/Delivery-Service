@@ -1,26 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5p0t3lxlm3k2"]
+[gd_scene format=3 uid="uid://b5p0t3lxlm3k2"]
 
-[ext_resource type="Script" path="res://Scenes/phone ui/doordash/DoorDash.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://chgca7v5bp00k" path="res://Scenes/phone ui/doordash/DoorDash.gd" id="1_script"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_phone"]
 
 [node name="DoorDash" type="Node2D" unique_id=45164460]
 script = ExtResource("1_script")
 
-[node name="Panel" type="Polygon2D" parent="."]
+[node name="Panel" type="Polygon2D" parent="." unique_id=185021253]
 material = SubResource("CanvasItemMaterial_phone")
 position = Vector2(155, 69)
 scale = Vector2(0.912, 0.805)
 polygon = PackedVector2Array(293, -7, 706, -7, 706, 645, 292, 644)
 
-[node name="BackButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="." unique_id=1858927287]
 offset_left = 425.0
 offset_top = 82.0
 offset_right = 470.0
 offset_bottom = 118.0
 text = "<"
 
-[node name="TitleLabel" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="." unique_id=706020058]
 offset_left = 486.0
 offset_top = 85.0
 offset_right = 744.0
@@ -29,7 +29,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Good Pizzas"
 
-[node name="StatusLabel" type="Label" parent="."]
+[node name="StatusLabel" type="Label" parent="." unique_id=1539711607]
 offset_left = 430.0
 offset_top = 136.0
 offset_right = 760.0
@@ -38,7 +38,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Good Pizzas"
 
-[node name="BalanceLabel" type="Label" parent="."]
+[node name="BalanceLabel" type="Label" parent="." unique_id=928873414]
 offset_left = 430.0
 offset_top = 174.0
 offset_right = 760.0
@@ -47,7 +47,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Balance: $0"
 
-[node name="ProfitLabel" type="Label" parent="."]
+[node name="ProfitLabel" type="Label" parent="." unique_id=332191805]
 offset_left = 430.0
 offset_top = 204.0
 offset_right = 760.0
@@ -56,7 +56,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Profit: $1/order"
 
-[node name="UpgradeHeader" type="Label" parent="."]
+[node name="UpgradeHeader" type="Label" parent="." unique_id=1506901168]
 offset_left = 430.0
 offset_top = 260.0
 offset_right = 760.0
@@ -65,7 +65,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "Profile Upgrades"
 
-[node name="Upgrade1" type="Button" parent="."]
+[node name="Upgrade1" type="Button" parent="." unique_id=900195490]
 offset_left = 430.0
 offset_top = 304.0
 offset_right = 760.0
@@ -73,7 +73,7 @@ offset_bottom = 352.0
 theme_override_font_sizes/font_size = 16
 text = "Upgrade 1"
 
-[node name="Upgrade2" type="Button" parent="."]
+[node name="Upgrade2" type="Button" parent="." unique_id=467960542]
 offset_left = 430.0
 offset_top = 366.0
 offset_right = 760.0
@@ -81,7 +81,7 @@ offset_bottom = 414.0
 theme_override_font_sizes/font_size = 16
 text = "Upgrade 2"
 
-[node name="Upgrade3" type="Button" parent="."]
+[node name="Upgrade3" type="Button" parent="." unique_id=1017447986]
 offset_left = 430.0
 offset_top = 428.0
 offset_right = 760.0

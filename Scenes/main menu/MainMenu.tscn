@@ -1,5 +1,13 @@
 [gd_scene format=3 uid="uid://6a3774jfc6h4"]
 
+[ext_resource type="Texture2D" uid="uid://drfv30agsykuy" path="res://Sprites/outside_background.png" id="1_is31a"]
+[ext_resource type="Script" uid="uid://dy5q5u61kavu1" path="res://Scenes/main menu/play.gd" id="2_rdf3e"]
+[ext_resource type="Script" uid="uid://cfaqv1pc6ikdy" path="res://Scenes/main menu/credits.gd" id="3_3xsr4"]
+[ext_resource type="Script" uid="uid://qdojj1t6j0yr" path="res://Scenes/main menu/quit.gd" id="4_lof8e"]
+[ext_resource type="Texture2D" uid="uid://be7r5of5buv0t" path="res://Sprites/apartment.png" id="5_7ibqo"]
+[ext_resource type="Texture2D" uid="uid://cnge45ei1e4gl" path="res://Sprites/pizza_shop.png" id="6_vd2nk"]
+[ext_resource type="Texture2D" uid="uid://cnv4xtj6j02lj" path="res://Sprites/Player/player_walk_2.png" id="7_s7jpm"]
+
 [node name="MainMenu" type="Control" unique_id=133789375]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +15,87 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="main Menu BG" type="Sprite2D" parent="." unique_id=409967295]
+position = Vector2(589, 350)
+scale = Vector2(3.8419356, 4.308642)
+texture = ExtResource("1_is31a")
+
+[node name="play" type="Label" parent="." unique_id=527217004]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 315.0
+offset_right = 1067.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.51888657, 0, 0.15028158, 1)
+theme_override_font_sizes/font_size = 90
+text = "PLAY"
+
+[node name="Button" type="Button" parent="play" unique_id=1055712690]
+z_index = -1
+layout_mode = 0
+offset_top = 23.0
+offset_right = 205.0
+offset_bottom = 85.0
+script = ExtResource("2_rdf3e")
+
+[node name="credits" type="Label" parent="." unique_id=572361068]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 402.0
+offset_right = 1134.0
+offset_bottom = 511.0
+theme_override_colors/font_color = Color(0.5176471, 0, 0.14901961, 1)
+theme_override_font_sizes/font_size = 90
+text = "CREDITS"
+
+[node name="Button" type="Button" parent="credits" unique_id=718180848]
+z_index = -1
+layout_mode = 0
+offset_top = 26.0
+offset_right = 347.0
+offset_bottom = 87.0
+script = ExtResource("3_3xsr4")
+
+[node name="Quit" type="Label" parent="." unique_id=398487869]
+layout_mode = 0
+offset_left = 871.0
+offset_top = 487.0
+offset_right = 1066.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0.5176471, 0, 0.14901961, 1)
+theme_override_font_sizes/font_size = 90
+text = "QUIT"
+
+[node name="Button" type="Button" parent="Quit" unique_id=369203585]
+z_index = -1
+layout_mode = 0
+offset_top = 26.0
+offset_right = 194.0
+offset_bottom = 85.0
+script = ExtResource("4_lof8e")
+
+[node name="Title" type="Label" parent="." unique_id=764033253]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 64.0
+offset_right = 1115.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.5176471, 0, 0.14901961, 1)
+theme_override_font_sizes/font_size = 130
+text = "Apartment Rush"
+
+[node name="Apartment" type="Sprite2D" parent="." unique_id=661530384]
+position = Vector2(324, 389)
+scale = Vector2(2.5, 2.3791208)
+texture = ExtResource("5_7ibqo")
+
+[node name="Pizza Shop" type="Sprite2D" parent="." unique_id=812365586]
+position = Vector2(627, 475)
+scale = Vector2(2.6816547, 2.3137252)
+texture = ExtResource("6_vd2nk")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1415099706]
+position = Vector2(181.5, 505.75)
+scale = Vector2(1.5, 1.5392855)
+texture = ExtResource("7_s7jpm")

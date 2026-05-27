@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ApartmentRush"
-run/main_scene="uid://dgnbkjgdybbtv"
+run/main_scene="uid://6a3774jfc6h4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

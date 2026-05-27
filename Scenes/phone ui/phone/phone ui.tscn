@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b0va0b57v7b8u"]
 
-[ext_resource type="Script" uid="uid://c5juaivxmlq2g" path="res://Scenes/phone ui/label.gd" id="1_mj6hf"]
-[ext_resource type="Script" uid="uid://dl8m82nqs2n6x" path="res://Scenes/phone ui/phone_ui.gd" id="1_r3iy8"]
-[ext_resource type="Script" uid="uid://c0fxw0w7ov6gh" path="res://Scenes/phone ui/DoorDashOpen.gd" id="3_kxgyb"]
+[ext_resource type="Script" uid="uid://c5juaivxmlq2g" path="res://Scenes/phone ui/phone/label.gd" id="1_mj6hf"]
+[ext_resource type="Script" uid="uid://dl8m82nqs2n6x" path="res://Scenes/phone ui/phone/phone_ui.gd" id="1_r3iy8"]
+[ext_resource type="Script" uid="uid://c0fxw0w7ov6gh" path="res://Scenes/phone ui/phone/DoorDashOpen.gd" id="3_kxgyb"]
 [ext_resource type="Texture2D" uid="uid://b2pjhbn8jlkwd" path="res://Objects/doordash_logo.png" id="4_tlh12"]
 [ext_resource type="Texture2D" uid="uid://iyr2u56pvmry" path="res://Sprites/upgrade_shop.png" id="5_ws6d4"]
-[ext_resource type="Script" uid="uid://bvcn8ieglwc3b" path="res://Scenes/phone ui/UpgradeShopOpen.gd" id="6_upgrade"]
+[ext_resource type="Script" uid="uid://bvcn8ieglwc3b" path="res://Scenes/phone ui/phone/UpgradeShopOpen.gd" id="6_upgrade"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3iy8"]
 

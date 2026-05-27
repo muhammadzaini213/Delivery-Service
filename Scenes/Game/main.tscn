@@ -455,8 +455,8 @@ shape = SubResource("RectangleShape2D_shop_interact")
 z_index = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="Outside/outside_background" unique_id=876949529]
-position = Vector2(575, 324.5)
-scale = Vector2(3.7032259, 3.9691358)
+position = Vector2(584.5, 326.5)
+scale = Vector2(3.7645159, 3.993827)
 texture = ExtResource("18_2dqcq")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1545640138]
@@ -493,8 +493,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -5.0
 offset_top = 3.0
-offset_right = -5.0
-offset_bottom = 3.0
+offset_right = -3.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
