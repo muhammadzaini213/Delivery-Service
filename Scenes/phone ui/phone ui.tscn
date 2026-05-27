@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c0fxw0w7ov6gh" path="res://Scenes/phone ui/DoorDashOpen.gd" id="3_kxgyb"]
 [ext_resource type="Texture2D" uid="uid://b2pjhbn8jlkwd" path="res://Objects/doordash_logo.png" id="4_tlh12"]
 [ext_resource type="Texture2D" uid="uid://iyr2u56pvmry" path="res://Sprites/upgrade_shop.png" id="5_ws6d4"]
+[ext_resource type="Script" uid="uid://bvcn8ieglwc3b" path="res://Scenes/phone ui/UpgradeShopOpen.gd" id="6_upgrade"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3iy8"]
 
@@ -32,10 +33,12 @@ modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 offset_left = 458.0
 offset_top = 120.0
-offset_right = 741.0
-offset_bottom = 154.0
-theme_override_font_sizes/font_size = 24
-text = "order received from 101"
+offset_right = 760.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+clip_text = true
+text = "Waiting for orders"
 script = ExtResource("1_mj6hf")
 
 [node name="doordash" type="Polygon2D" parent="." unique_id=2107737781]
@@ -65,7 +68,7 @@ offset_left = 454.0
 offset_top = 233.0
 offset_right = 541.0
 offset_bottom = 307.0
-script = ExtResource("3_kxgyb")
+script = ExtResource("6_upgrade")
 
 [node name="Sprite2D" type="Sprite2D" parent="upgrade shop" unique_id=434188774]
 position = Vector2(499, 268.3481)

@@ -12,8 +12,15 @@ func _process(_delta):
 		return
 
 	if player_near and Input.is_action_just_pressed("interact"):
-		if player != null and player.deliver_pizza():
-			get_tree().current_scene.show_message("Delivered to Flat %s!" % flat_number)
+		if not OrderManager.has_order(flat_number):
+			var message = "No active orders!"
+			if not OrderManager.active_orders.is_empty():
+				message = "Wrong flat! Deliver to Flat %s." % OrderManager.active_orders[0]
+
+			get_tree().current_scene.show_message(message)
+		elif player != null and player.deliver_pizza():
+			var earned = OrderManager.complete_order(flat_number)
+			get_tree().current_scene.show_message("Delivered to Flat %s! +$%s" % [flat_number, earned])
 			get_tree().current_scene.update_pizza_text()
 			success_sound.play()
 		elif player != null:

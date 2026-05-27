@@ -1,34 +1,25 @@
 extends Label
 
-var flat = [101,102,103,201,202,203,301,302,303,401,402,403,501,502,503]
-@export var deliver: int = 101
-var receivingOrder: bool = false
-
 @onready var my_button = $"../CheckButton"
 
 func _ready() -> void:
-	# Connect the signal manually
 	my_button.toggled.connect(_on_check_button_toggled)
-	# Set initial text
-	text = "not receiving orders"
+	OrderManager.orders_changed.connect(update_order_text)
+	OrderManager.order_received.connect(_on_order_received)
+	OrderManager.receiving_orders_changed.connect(_on_receiving_orders_changed)
+
+	my_button.set_pressed_no_signal(OrderManager.receiving_orders)
+	update_order_text()
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
-	receivingOrder = toggled_on
-	
-	if receivingOrder:
-		start_order_cycle()
-	else:
-		text = "not receiving orders"
+	OrderManager.set_receiving_orders(toggled_on)
 
-func start_order_cycle() -> void:
-	# This loop runs as long as receivingOrder is true
-	while receivingOrder:
-		deliver = flat.pick_random()
-		text = "Order Recieved from " + str(deliver)
-		
-		# Wait for 30 seconds before the next order
-		await get_tree().create_timer(30.0).timeout
-		
-		# If the user toggled it OFF during the 30s wait, break the loop
-		if not receivingOrder:
-			break
+func update_order_text() -> void:
+	text = OrderManager.get_orders_text()
+
+func _on_order_received(flat_number: int) -> void:
+	text = "New: Flat " + str(flat_number) + "\n" + OrderManager.get_orders_text()
+
+func _on_receiving_orders_changed(receiving_orders: bool) -> void:
+	my_button.set_pressed_no_signal(receiving_orders)
+	update_order_text()
