@@ -22,12 +22,15 @@ var transitioning := false
 @onready var delivery_timer = $UI/DeliveryTimer
 
 func _ready():
+	OrderManager.order_received.connect(_on_order_received)
+	current_floor = OrderManager.current_floor
 	update_floor()
 	update_pizza_text()
 	fade_rect.color.a = 0.0
 
 func _process(_delta):
 	if Input.is_action_just_pressed("open_phone"):
+		OrderManager.current_floor = current_floor
 		get_tree().change_scene_to_file("res://Scenes/phone ui/phone ui.tscn")
 
 func use_staircase(direction):
@@ -53,6 +56,7 @@ func change_floor(next_floor):
 	await tween.finished
 
 	current_floor = next_floor
+	OrderManager.current_floor = current_floor
 	update_floor()
 	delivery_text.visible = false
 
@@ -83,3 +87,6 @@ func show_message(message):
 	delivery_text.text = message
 	delivery_text.visible = true
 	delivery_timer.start()
+
+func _on_order_received(flat_number):
+	show_message("New order: Flat %s" % flat_number)

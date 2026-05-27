@@ -15,6 +15,15 @@ run/main_scene="uid://dgnbkjgdybbtv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+OrderManager="*res://Scripts/Core/order_manager.gd"
+
+[gui]
+
+theme/custom="res://fonts/pixelify_theme.tres"
+theme/custom_font="res://fonts/PixelifySans-Regular.ttf"
+
 [input]
 
 move_left={
