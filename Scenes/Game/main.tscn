@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4t257wd1jskq" path="res://Scripts/Characters/player.gd" id="1_player"]
 [ext_resource type="Script" uid="uid://co5n4stu2812b" path="res://Scenes/Game/main.gd" id="2_main"]
-[ext_resource type="Script" path="res://Scripts/Flat/flat.gd" id="4_flat"]
+[ext_resource type="Script" uid="uid://be2dpf4dfitwd" path="res://Scripts/Flat/flat.gd" id="4_flat"]
 [ext_resource type="AudioStream" uid="uid://4u2qxdmtkf3a" path="res://Audio/SFX/freesound_community-short-success-sound-glockenspiel-treasure-video-game-6346.mp3" id="5_success"]
 [ext_resource type="Script" uid="uid://cakpj6a5i4koc" path="res://Scripts/UI/ui.gd" id="6_ui"]
 [ext_resource type="Script" uid="uid://c6iws2sif8l30" path="res://Scripts/Objects/staircase.gd" id="7_stair"]
@@ -13,9 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://be7r5of5buv0t" path="res://Sprites/apartment.png" id="12_apartment"]
 [ext_resource type="Texture2D" uid="uid://cnge45ei1e4gl" path="res://Sprites/pizza_shop.png" id="13_shop_texture"]
 [ext_resource type="Texture2D" uid="uid://bwg1n1wgxvsk8" path="res://Sprites/Player/player_idle.png" id="14_player_idle"]
+[ext_resource type="Texture2D" uid="uid://c4736lylbvkxk" path="res://Sprites/inside_background.png" id="14_vbfs4"]
 [ext_resource type="Texture2D" uid="uid://76vu8y2yvn2t" path="res://Sprites/Player/player_walk_1.png" id="15_player_walk_1"]
 [ext_resource type="Texture2D" uid="uid://cnv4xtj6j02lj" path="res://Sprites/Player/player_walk_2.png" id="16_player_walk_2"]
 [ext_resource type="Texture2D" uid="uid://hov0l0qkbttf" path="res://Sprites/Player/player_walk_3.png" id="17_player_walk_3"]
+[ext_resource type="Texture2D" uid="uid://drfv30agsykuy" path="res://Sprites/outside_background.png" id="18_2dqcq"]
 [ext_resource type="Texture2D" uid="uid://bmj81jngsjp0u" path="res://Sprites/Player/player_walk_4.png" id="18_player_walk_4"]
 [ext_resource type="Texture2D" uid="uid://dxudu6egun45f" path="res://Sprites/Player/player_walk_5.png" id="19_player_walk_5"]
 
@@ -98,6 +100,9 @@ size = Vector2(120, 110)
 script = ExtResource("2_main")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1829272238]
+z_index = 5
+position = Vector2(-62.000008, 88)
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1874335627]
@@ -112,7 +117,9 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Platform" type="StaticBody2D" parent="." unique_id=1823899789]
-position = Vector2(560, 370)
+visible = false
+position = Vector2(575, 560)
+scale = Vector2(1.27, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1559890263]
 shape = SubResource("RectangleShape2D_platform")
@@ -134,12 +141,90 @@ offset_right = 450.0
 offset_bottom = 17.0
 color = Color(0.05, 0.35, 1, 1)
 
-[node name="Platform2" type="StaticBody2D" parent="." unique_id=82488060]
-position = Vector2(560, 370)
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1518464390]
+visible = false
+position = Vector2(575, 560)
+scale = Vector2(1.27, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1234792183]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1098030405]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform3" unique_id=1963276998]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect2" type="ColorRect" parent="Platform3" unique_id=944625376]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.05, 0.35, 1, 1)
+
+[node name="side boundary" type="StaticBody2D" parent="." unique_id=682001262]
+visible = false
+position = Vector2(1150, 560)
+rotation = 1.5707964
+scale = Vector2(1.27, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="side boundary" unique_id=1278986405]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect" type="ColorRect" parent="side boundary" unique_id=1286839760]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="side boundary" unique_id=1368521251]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect2" type="ColorRect" parent="side boundary" unique_id=1414898529]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.05, 0.35, 1, 1)
+
+[node name="side boundary2" type="StaticBody2D" parent="." unique_id=795661664]
+visible = false
+position = Vector2(-15, 560)
+rotation = 1.5707964
+scale = Vector2(1.27, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="side boundary2" unique_id=1356943595]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect" type="ColorRect" parent="side boundary2" unique_id=1747034149]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="side boundary2" unique_id=2079426396]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="ColorRect2" type="ColorRect" parent="side boundary2" unique_id=332782309]
+offset_left = -450.0
+offset_top = -17.0
+offset_right = 450.0
+offset_bottom = 17.0
+color = Color(0.05, 0.35, 1, 1)
 
 [node name="Apartment" type="Node2D" parent="." unique_id=160127076]
+visible = false
+position = Vector2(0, 185)
 
 [node name="Flats" type="Node2D" parent="Apartment" unique_id=1887532992]
+position = Vector2(-111, -241.99998)
+scale = Vector2(1.3, 1.7)
 
 [node name="Flat1" type="StaticBody2D" parent="Apartment/Flats" unique_id=1196844892]
 position = Vector2(250, 315)
@@ -251,7 +336,8 @@ stream = ExtResource("5_success")
 shape = SubResource("RectangleShape2D_flat_interact")
 
 [node name="UpStaircase" type="StaticBody2D" parent="Apartment" unique_id=331992409]
-position = Vector2(1008, 305)
+position = Vector2(1098, 268.99997)
+scale = Vector2(1.5, 1.7)
 script = ExtResource("7_stair")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/UpStaircase" unique_id=1866059472]
@@ -275,7 +361,8 @@ text = "Up"
 shape = SubResource("RectangleShape2D_stair_interact")
 
 [node name="DownStaircase" type="StaticBody2D" parent="Apartment" unique_id=1935661941]
-position = Vector2(112, 305)
+position = Vector2(56, 268)
+scale = Vector2(1.5, 1.7)
 script = ExtResource("7_stair")
 direction = "down"
 
@@ -300,11 +387,19 @@ text = "Down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/DownStaircase/InteractArea" unique_id=458473699]
 shape = SubResource("RectangleShape2D_stair_interact")
 
+[node name="inside_background" type="StaticBody2D" parent="Apartment" unique_id=528007976]
+
+[node name="Sprite2D" type="Sprite2D" parent="Apartment/inside_background" unique_id=1661377996]
+z_index = -1
+position = Vector2(452.00006, 135.49998)
+scale = Vector2(4.713805, 4.5985913)
+texture = ExtResource("14_vbfs4")
+
 [node name="Outside" type="Node2D" parent="." unique_id=1250173828]
-visible = false
 
 [node name="ApartmentEntrance" type="StaticBody2D" parent="Outside" unique_id=1288681563]
-position = Vector2(500, 300)
+position = Vector2(500, 420)
+scale = Vector2(2, 2)
 script = ExtResource("8_entrance")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/ApartmentEntrance" unique_id=149017791]
@@ -320,7 +415,9 @@ offset_left = -45.0
 offset_top = -82.0
 offset_right = 58.0
 offset_bottom = -59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Apartment"
+metadata/_edit_use_anchors_ = true
 
 [node name="InteractArea" type="Area2D" parent="Outside/ApartmentEntrance" unique_id=1895916586]
 
@@ -328,7 +425,8 @@ text = "Apartment"
 shape = SubResource("RectangleShape2D_entrance_interact")
 
 [node name="PizzaShop" type="StaticBody2D" parent="Outside" unique_id=1034530292]
-position = Vector2(675, 315)
+position = Vector2(800, 460)
+scale = Vector2(2, 2)
 script = ExtResource("9_shop_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/PizzaShop" unique_id=817394261]
@@ -344,12 +442,22 @@ offset_left = -28.0
 offset_top = -67.0
 offset_right = 40.0
 offset_bottom = -44.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Shop"
+metadata/_edit_use_anchors_ = true
 
 [node name="InteractArea" type="Area2D" parent="Outside/PizzaShop" unique_id=333823541]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/PizzaShop/InteractArea" unique_id=163242840]
 shape = SubResource("RectangleShape2D_shop_interact")
+
+[node name="outside_background" type="StaticBody2D" parent="Outside" unique_id=79541183]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="Outside/outside_background" unique_id=876949529]
+position = Vector2(575, 324.5)
+scale = Vector2(3.7032259, 3.9691358)
+texture = ExtResource("18_2dqcq")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1545640138]
 script = ExtResource("6_ui")
@@ -367,6 +475,7 @@ offset_left = 24.0
 offset_top = 20.0
 offset_right = 160.0
 offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Floor 1"
 
 [node name="PizzaText" type="Label" parent="UI" unique_id=1620438645]
@@ -374,12 +483,18 @@ offset_left = 24.0
 offset_top = 50.0
 offset_right = 180.0
 offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Pizzas: 5/5"
 
 [node name="FadeRect" type="ColorRect" parent="UI" unique_id=1768084759]
+z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

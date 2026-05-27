@@ -27,7 +27,7 @@ func _ready():
 	fade_rect.color.a = 0.0
 
 func _process(_delta):
-	if Input.is_action_just_pressed("phone ui"):
+	if Input.is_action_just_pressed("open_phone"):
 		get_tree().change_scene_to_file("res://Scenes/phone ui/phone ui.tscn")
 
 func use_staircase(direction):
