@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxojblnusvoyf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1bhfa"]
+
+[node name="UpgradeShop" type="Node2D" unique_id=1057887120]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2019689782]
+material = SubResource("CanvasItemMaterial_1bhfa")
+position = Vector2(-0.9999924, -11.377302)
+scale = Vector2(1.1677544, 1.0889571)
+polygon = PackedVector2Array(293, -7, 706, -7, 706.0001, 318.96295, 706, 645, 496.44696, 644.4944, 291.5294, 644)
