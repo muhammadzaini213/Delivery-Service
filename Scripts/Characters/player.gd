@@ -39,7 +39,7 @@ func deliver_pizza():
 	if pizzas_held <= 0:
 		return false
 
-	pizzas_held -= 1
+	OrderManager.no_of_pizza -= 1
 	return true
 
 

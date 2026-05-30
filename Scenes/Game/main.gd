@@ -81,7 +81,7 @@ func update_floor():
 		flat.set_floor_number(current_floor)
 
 func update_pizza_text():
-	pizza_text.text = "Pizzas: %s/%s" % [player.pizzas_held, player.max_pizzas]
+	pizza_text.text = "Pizzas: %s/%s" % [OrderManager.no_of_pizza, player.max_pizzas]
 
 func show_message(message):
 	delivery_text.text = message

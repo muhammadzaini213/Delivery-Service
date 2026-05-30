@@ -20,6 +20,7 @@ var active_orders: Array[int] = []
 var balance := 0
 var profile_upgrade_levels := [0, 0, 0]
 var _order_loop_running := false
+var no_of_pizza = 5
 
 func set_receiving_orders(enabled: bool) -> void:
 	if receiving_orders == enabled:

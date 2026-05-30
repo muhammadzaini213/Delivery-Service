@@ -4,7 +4,6 @@ extends Node2D
 @onready var profit_label = $ProfitLabel
 @onready var status_label = $StatusLabel
 @onready var upgrade_buttons = [$Upgrade1, $Upgrade2, $Upgrade3]
-
 func _ready() -> void:
 	$BackButton.pressed.connect(_on_back_button_pressed)
 	for upgrade_index in range(upgrade_buttons.size()):
@@ -13,6 +12,8 @@ func _ready() -> void:
 	OrderManager.balance_changed.connect(_on_balance_changed)
 	OrderManager.upgrades_changed.connect(update_view)
 	update_view()
+	
+	
 
 func update_view() -> void:
 	balance_label.text = "Balance: $%s" % OrderManager.balance

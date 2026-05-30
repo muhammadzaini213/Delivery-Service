@@ -1,3 +1,35 @@
 [gd_scene format=3 uid="uid://wjbln8a5w41p"]
 
+[ext_resource type="Texture2D" uid="uid://c4736lylbvkxk" path="res://Sprites/inside_background.png" id="1_uawi3"]
+[ext_resource type="Script" uid="uid://cpxdt841w3eau" path="res://Scenes/main menu/back.gd" id="2_knitl"]
+
 [node name="Credits" type="Node" unique_id=1828236976]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=688533099]
+position = Vector2(493.00003, 334)
+scale = Vector2(4.996633, 5.7042255)
+texture = ExtResource("1_uawi3")
+
+[node name="Label" type="Label" parent="." unique_id=625271630]
+offset_left = 22.0
+offset_top = 108.0
+offset_right = 1118.0
+offset_bottom = 582.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "[Development Team]
+- PizzaDev — Game Design, Programming, Audio, 2D Artist
+- ACodes — Programming, 2D Artist
+
+[Systems & Direction]
+- Zaini — Technical Direction & Workflow
+
+[Special Thanks]
+- Berke"
+
+[node name="Button" type="Button" parent="." unique_id=730977536]
+offset_right = 96.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 53
+text = "<"
+script = ExtResource("2_knitl")

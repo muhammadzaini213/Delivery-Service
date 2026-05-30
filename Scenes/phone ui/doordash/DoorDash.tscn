@@ -65,6 +65,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "Profile Upgrades"
 
+[node name="InsufficientBalanceLabel" type="Label" parent="." unique_id=1522557369]
+offset_left = 514.0
+offset_top = 500.0
+offset_right = 679.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Upgrade1" type="Button" parent="." unique_id=900195490]
 offset_left = 430.0
 offset_top = 304.0
