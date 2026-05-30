@@ -7,7 +7,6 @@ extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 func _physics_process(delta):
 
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -29,8 +28,8 @@ func _physics_process(delta):
 	if direction != 0:
 		target_animation = "sprint" if is_sprinting else "walk"
 
-	if $AnimatedSprite2D.animation != target_animation:
-		$AnimatedSprite2D.play(target_animation)
+	if $AnimationPlayer.current_animation != target_animation:
+		$AnimationPlayer.play(target_animation)
 
 	move_and_slide()
 
