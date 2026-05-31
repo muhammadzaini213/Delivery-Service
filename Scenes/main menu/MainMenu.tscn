@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://be7r5of5buv0t" path="res://Sprites/apartment.png" id="5_7ibqo"]
 [ext_resource type="Texture2D" uid="uid://cnge45ei1e4gl" path="res://Sprites/pizza_shop.png" id="6_vd2nk"]
 [ext_resource type="Texture2D" uid="uid://cnv4xtj6j02lj" path="res://Sprites/Player/player_walk_2.png" id="7_s7jpm"]
+[ext_resource type="AudioStream" uid="uid://csejkg63x2rya" path="res://Audio/SFX/Music/ptitle.ogg" id="8_rdf3e"]
 
 [node name="MainMenu" type="Control" unique_id=133789375]
 layout_mode = 3
@@ -99,3 +100,7 @@ texture = ExtResource("6_vd2nk")
 position = Vector2(181.5, 505.75)
 scale = Vector2(1.5, 1.5392855)
 texture = ExtResource("7_s7jpm")
+
+[node name="MainMenu" type="AudioStreamPlayer2D" parent="." unique_id=627977764]
+stream = ExtResource("8_rdf3e")
+autoplay = true

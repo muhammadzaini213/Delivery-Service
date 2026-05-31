@@ -5,7 +5,8 @@ extends StaticBody2D
 var player_near = false
 var player = null
 
-@onready var success_sound = $SuccessSound
+@onready var success_sound: AudioStreamPlayer2D = $SuccessSound
+@onready var fail_sound: AudioStreamPlayer2D = $FailSound
 
 func _process(_delta):
 	if get_tree().current_scene.current_floor == get_tree().current_scene.OUTSIDE_FLOOR:
@@ -13,6 +14,7 @@ func _process(_delta):
 
 	if player_near and Input.is_action_just_pressed("interact"):
 		if not OrderManager.has_order(flat_number):
+			fail_sound.play()
 			var message = "No active orders!"
 			if not OrderManager.active_orders.is_empty():
 				message = "Wrong flat! Deliver to Flat %s." % OrderManager.active_orders[0]
@@ -24,6 +26,7 @@ func _process(_delta):
 			get_tree().current_scene.update_pizza_text()
 			success_sound.play()
 		elif player != null:
+			fail_sound.play()
 			get_tree().current_scene.show_message("You have no pizzas!")
 
 func set_floor_number(floor_number):
