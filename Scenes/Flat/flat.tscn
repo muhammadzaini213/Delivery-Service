@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://0srmmmoyv6ey"]
+
+[ext_resource type="Script" uid="uid://be2dpf4dfitwd" path="res://Scripts/Flat/flat.gd" id="1_i82ob"]
+[ext_resource type="Texture2D" uid="uid://qxj06477ou1m" path="res://Sprites/flat_door.png" id="2_ixb4c"]
+[ext_resource type="AudioStream" uid="uid://4u2qxdmtkf3a" path="res://Audio/SFX/Door/Success.mp3" id="3_yqki2"]
+[ext_resource type="AudioStream" uid="uid://crbuj2vh3x3by" path="res://Audio/SFX/Door/Fail.wav" id="5_6ajld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flat_body"]
+size = Vector2(70, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flat_interact"]
+size = Vector2(100, 70)
+
+[node name="Flat" type="StaticBody2D" unique_id=1679500501]
+script = ExtResource("1_i82ob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=819700678]
+shape = SubResource("RectangleShape2D_flat_body")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1588553515]
+position = Vector2(0, 5)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_ixb4c")
+
+[node name="SuccessSound" type="AudioStreamPlayer2D" parent="." unique_id=754729251]
+stream = ExtResource("3_yqki2")
+
+[node name="FailSound" type="AudioStreamPlayer2D" parent="." unique_id=1191300411]
+stream = ExtResource("5_6ajld")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=1502677774]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=2077007060]
+shape = SubResource("RectangleShape2D_flat_interact")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

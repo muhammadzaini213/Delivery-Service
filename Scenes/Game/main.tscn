@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://4t257wd1jskq" path="res://Scripts/Characters/player.gd" id="1_player"]
 [ext_resource type="Script" uid="uid://co5n4stu2812b" path="res://Scenes/Game/main.gd" id="2_main"]
-[ext_resource type="Script" uid="uid://be2dpf4dfitwd" path="res://Scripts/Flat/flat.gd" id="4_flat"]
-[ext_resource type="AudioStream" uid="uid://4u2qxdmtkf3a" path="res://Audio/SFX/freesound_community-short-success-sound-glockenspiel-treasure-video-game-6346.mp3" id="5_success"]
 [ext_resource type="Script" uid="uid://cakpj6a5i4koc" path="res://Scripts/UI/ui.gd" id="6_ui"]
 [ext_resource type="Script" uid="uid://c6iws2sif8l30" path="res://Scripts/Objects/staircase.gd" id="7_stair"]
 [ext_resource type="Script" uid="uid://bkw7wiypm5ua2" path="res://Scripts/Objects/apartment_entrance.gd" id="8_entrance"]
@@ -20,12 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://bwg1n1wgxvsk8" path="res://Sprites/Player/player_idle.png" id="14_player_idle"]
 [ext_resource type="AudioStream" uid="uid://dueaantsjrlf1" path="res://Audio/SFX/Sprint/sprint3.wav" id="14_plqii"]
 [ext_resource type="Texture2D" uid="uid://c4736lylbvkxk" path="res://Sprites/inside_background.png" id="14_vbfs4"]
+[ext_resource type="PackedScene" uid="uid://0srmmmoyv6ey" path="res://Scenes/Flat/flat.tscn" id="15_42tef"]
 [ext_resource type="Texture2D" uid="uid://76vu8y2yvn2t" path="res://Sprites/Player/player_walk_1.png" id="15_player_walk_1"]
 [ext_resource type="Texture2D" uid="uid://cnv4xtj6j02lj" path="res://Sprites/Player/player_walk_2.png" id="16_player_walk_2"]
 [ext_resource type="Texture2D" uid="uid://hov0l0qkbttf" path="res://Sprites/Player/player_walk_3.png" id="17_player_walk_3"]
 [ext_resource type="Texture2D" uid="uid://drfv30agsykuy" path="res://Sprites/outside_background.png" id="18_2dqcq"]
 [ext_resource type="Texture2D" uid="uid://bmj81jngsjp0u" path="res://Sprites/Player/player_walk_4.png" id="18_player_walk_4"]
 [ext_resource type="Texture2D" uid="uid://dxudu6egun45f" path="res://Sprites/Player/player_walk_5.png" id="19_player_walk_5"]
+[ext_resource type="AudioStream" uid="uid://bs2rm7pww33n3" path="res://Audio/SFX/Outdoor/Ambience.mp3" id="24_lj4ce"]
+[ext_resource type="AudioStream" uid="uid://ytfg3r42irl7" path="res://Audio/SFX/Music/part 1.ogg" id="27_3voqb"]
+[ext_resource type="AudioStream" uid="uid://cr8xfw6hr6v4n" path="res://Audio/SFX/Music/part 2.ogg" id="28_k015e"]
+[ext_resource type="AudioStream" uid="uid://dg5syox7xslpe" path="res://Audio/SFX/Music/part3.ogg" id="29_0nwk1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(16, 16)
@@ -245,12 +248,6 @@ stream_2/stream = ExtResource("14_plqii")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
 size = Vector2(900, 34)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_flat_body"]
-size = Vector2(70, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_flat_interact"]
-size = Vector2(100, 70)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stair_body"]
 size = Vector2(70, 96)
 
@@ -409,114 +406,20 @@ position = Vector2(0, 185)
 position = Vector2(-111, -241.99998)
 scale = Vector2(1.3, 1.7)
 
-[node name="Flat1" type="StaticBody2D" parent="Apartment/Flats" unique_id=1196844892]
+[node name="Flat1" parent="Apartment/Flats" unique_id=1679500501 instance=ExtResource("15_42tef")]
 position = Vector2(250, 315)
-script = ExtResource("4_flat")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat1" unique_id=1003517066]
-shape = SubResource("RectangleShape2D_flat_body")
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Apartment/Flats/Flat1" unique_id=1025478113]
-position = Vector2(0, 5)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("10_door")
-
-[node name="SuccessSound" type="AudioStreamPlayer2D" parent="Apartment/Flats/Flat1" unique_id=995774715]
-stream = ExtResource("5_success")
-
-[node name="InteractArea" type="Area2D" parent="Apartment/Flats/Flat1" unique_id=1052056385]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat1/InteractArea" unique_id=597330383]
-shape = SubResource("RectangleShape2D_flat_interact")
-
-[node name="Flat2" type="StaticBody2D" parent="Apartment/Flats" unique_id=324072845]
+[node name="Flat2" parent="Apartment/Flats" unique_id=903057651 instance=ExtResource("15_42tef")]
 position = Vector2(390, 315)
-script = ExtResource("4_flat")
-flat_number = 102
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat2" unique_id=317650009]
-shape = SubResource("RectangleShape2D_flat_body")
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Apartment/Flats/Flat2" unique_id=532594681]
-position = Vector2(0, 5)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("10_door")
-
-[node name="SuccessSound" type="AudioStreamPlayer2D" parent="Apartment/Flats/Flat2" unique_id=849589267]
-stream = ExtResource("5_success")
-
-[node name="InteractArea" type="Area2D" parent="Apartment/Flats/Flat2" unique_id=474617197]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat2/InteractArea" unique_id=66894304]
-shape = SubResource("RectangleShape2D_flat_interact")
-
-[node name="Flat3" type="StaticBody2D" parent="Apartment/Flats" unique_id=218208828]
+[node name="Flat3" parent="Apartment/Flats" unique_id=231421965 instance=ExtResource("15_42tef")]
 position = Vector2(530, 315)
-script = ExtResource("4_flat")
-flat_number = 103
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat3" unique_id=1350960887]
-shape = SubResource("RectangleShape2D_flat_body")
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Apartment/Flats/Flat3" unique_id=809927307]
-position = Vector2(0, 5)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("10_door")
-
-[node name="SuccessSound" type="AudioStreamPlayer2D" parent="Apartment/Flats/Flat3" unique_id=188782752]
-stream = ExtResource("5_success")
-
-[node name="InteractArea" type="Area2D" parent="Apartment/Flats/Flat3" unique_id=1092764622]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat3/InteractArea" unique_id=599215154]
-shape = SubResource("RectangleShape2D_flat_interact")
-
-[node name="Flat4" type="StaticBody2D" parent="Apartment/Flats" unique_id=725330050]
+[node name="Flat4" parent="Apartment/Flats" unique_id=1603602762 instance=ExtResource("15_42tef")]
 position = Vector2(670, 315)
-script = ExtResource("4_flat")
-flat_number = 104
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat4" unique_id=1203178342]
-shape = SubResource("RectangleShape2D_flat_body")
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Apartment/Flats/Flat4" unique_id=164415597]
-position = Vector2(0, 5)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("10_door")
-
-[node name="SuccessSound" type="AudioStreamPlayer2D" parent="Apartment/Flats/Flat4" unique_id=186532811]
-stream = ExtResource("5_success")
-
-[node name="InteractArea" type="Area2D" parent="Apartment/Flats/Flat4" unique_id=400378312]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat4/InteractArea" unique_id=1834876279]
-shape = SubResource("RectangleShape2D_flat_interact")
-
-[node name="Flat5" type="StaticBody2D" parent="Apartment/Flats" unique_id=1379839542]
+[node name="Flat5" parent="Apartment/Flats" unique_id=1864441866 instance=ExtResource("15_42tef")]
 position = Vector2(810, 315)
-script = ExtResource("4_flat")
-flat_number = 105
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat5" unique_id=1158826088]
-shape = SubResource("RectangleShape2D_flat_body")
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Apartment/Flats/Flat5" unique_id=1650181499]
-position = Vector2(0, 5)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("10_door")
-
-[node name="SuccessSound" type="AudioStreamPlayer2D" parent="Apartment/Flats/Flat5" unique_id=687624879]
-stream = ExtResource("5_success")
-
-[node name="InteractArea" type="Area2D" parent="Apartment/Flats/Flat5" unique_id=2099881788]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Apartment/Flats/Flat5/InteractArea" unique_id=77900751]
-shape = SubResource("RectangleShape2D_flat_interact")
 
 [node name="UpStaircase" type="StaticBody2D" parent="Apartment" unique_id=331992409]
 position = Vector2(1098, 268.99997)
@@ -687,16 +590,20 @@ color = Color(0, 0, 0, 0)
 wait_time = 1.5
 one_shot = true
 
-[connection signal="body_entered" from="Apartment/Flats/Flat1/InteractArea" to="Apartment/Flats/Flat1" method="_on_interact_area_body_entered"]
-[connection signal="body_exited" from="Apartment/Flats/Flat1/InteractArea" to="Apartment/Flats/Flat1" method="_on_interact_area_body_exited"]
-[connection signal="body_entered" from="Apartment/Flats/Flat2/InteractArea" to="Apartment/Flats/Flat2" method="_on_interact_area_body_entered"]
-[connection signal="body_exited" from="Apartment/Flats/Flat2/InteractArea" to="Apartment/Flats/Flat2" method="_on_interact_area_body_exited"]
-[connection signal="body_entered" from="Apartment/Flats/Flat3/InteractArea" to="Apartment/Flats/Flat3" method="_on_interact_area_body_entered"]
-[connection signal="body_exited" from="Apartment/Flats/Flat3/InteractArea" to="Apartment/Flats/Flat3" method="_on_interact_area_body_exited"]
-[connection signal="body_entered" from="Apartment/Flats/Flat4/InteractArea" to="Apartment/Flats/Flat4" method="_on_interact_area_body_entered"]
-[connection signal="body_exited" from="Apartment/Flats/Flat4/InteractArea" to="Apartment/Flats/Flat4" method="_on_interact_area_body_exited"]
-[connection signal="body_entered" from="Apartment/Flats/Flat5/InteractArea" to="Apartment/Flats/Flat5" method="_on_interact_area_body_entered"]
-[connection signal="body_exited" from="Apartment/Flats/Flat5/InteractArea" to="Apartment/Flats/Flat5" method="_on_interact_area_body_exited"]
+[node name="Ambience" type="AudioStreamPlayer2D" parent="." unique_id=1747177329]
+stream = ExtResource("24_lj4ce")
+volume_db = -10.0
+
+[node name="Part1" type="AudioStreamPlayer2D" parent="." unique_id=2141399463]
+stream = ExtResource("27_3voqb")
+autoplay = true
+
+[node name="Part2" type="AudioStreamPlayer2D" parent="." unique_id=271485067]
+stream = ExtResource("28_k015e")
+
+[node name="Part3" type="AudioStreamPlayer2D" parent="." unique_id=1634256004]
+stream = ExtResource("29_0nwk1")
+
 [connection signal="body_entered" from="Apartment/UpStaircase/InteractArea" to="Apartment/UpStaircase" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Apartment/UpStaircase/InteractArea" to="Apartment/UpStaircase" method="_on_interact_area_body_exited"]
 [connection signal="body_entered" from="Apartment/DownStaircase/InteractArea" to="Apartment/DownStaircase" method="_on_interact_area_body_entered"]

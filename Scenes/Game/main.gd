@@ -21,6 +21,11 @@ var transitioning := false
 @onready var delivery_text = $UI/DeliveryText
 @onready var delivery_timer = $UI/DeliveryTimer
 
+@onready var ambience: AudioStreamPlayer2D = $Ambience
+@onready var part_1: AudioStreamPlayer2D = $Part1
+@onready var part_2: AudioStreamPlayer2D = $Part2
+@onready var part_3: AudioStreamPlayer2D = $Part3
+
 func _ready():
 	OrderManager.order_received.connect(_on_order_received)
 	current_floor = OrderManager.current_floor
@@ -45,7 +50,9 @@ func use_staircase(direction):
 func enter_apartment():
 	if transitioning or current_floor != OUTSIDE_FLOOR:
 		return
-
+	ambience.stop()
+	part_1.play()
+	part_3.stop()
 	change_floor(MIN_FLOOR)
 
 func change_floor(next_floor):
@@ -77,6 +84,11 @@ func update_floor():
 	up_staircase_collision.disabled = is_outside or current_floor >= MAX_FLOOR
 	down_staircase_collision.disabled = is_outside
 
+	if is_outside:
+		ambience.play()
+		part_1.stop()
+		part_3.play()
+	
 	for flat in flats.get_children():
 		flat.set_floor_number(current_floor)
 
